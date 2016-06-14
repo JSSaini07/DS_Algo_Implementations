@@ -1,5 +1,5 @@
 //T:O(N)
-//S::O(N) [One Pass]
+//S:O(N) [One Pass]
 
 #include <iostream>
 #include <map>
