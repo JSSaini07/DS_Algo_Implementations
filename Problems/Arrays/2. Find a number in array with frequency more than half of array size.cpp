@@ -8,7 +8,6 @@ check if the answer we are getting is coming more than n/2 times.
 */
 
 #include <iostream>
-#include <map>
 
 using namespace std;
 
