@@ -1,4 +1,5 @@
 
+
 template <typename datatype>
 class node {
 public:
@@ -10,3 +11,5 @@ public:
         this->next=NULL;
     }
 };
+
+
