@@ -1,4 +1,7 @@
 
+#ifndef node_header // include guard to save from multiple includes of node.h
+#define node_header
+
 template <typename datatype>
 class node {
 public:
@@ -10,3 +13,5 @@ public:
         this->next=NULL;
     }
 };
+
+#endif

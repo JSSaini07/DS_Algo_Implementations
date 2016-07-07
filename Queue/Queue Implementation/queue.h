@@ -1,4 +1,4 @@
-#include "node.h"
+#include "../../Linked List/Implementation/node.h"
 
 template <typename datatype>
 class Queue {
