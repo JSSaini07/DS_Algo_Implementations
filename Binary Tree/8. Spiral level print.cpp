@@ -12,46 +12,45 @@ void spiralLevelPrint(BTree<int>* root)
     {
         return;
     }
-    Queue<BTree<int>* > q;
-    Stack<BTree<int>* > s;
-    cout<<root->data<<" ";
-    if(root->left)
+    Stack<BTree<int>* > s1;
+    Stack<BTree<int>* > s2;
+    int leftToRight=1;
+    s1.push(root);
+    while(!s1.isEmpty()||!s2.isEmpty())
     {
-        q.enqueue(root->left);
-    }
-    if(root->right)
-    {
-        q.enqueue(root->right);
-    }
-    BTree<int>* currentNode;
-    while(!q.isEmpty()||!s.isEmpty())
-    {
-        while(!q.isEmpty())
+        if(leftToRight)
         {
-            currentNode=q.dequeue();
-            cout<<currentNode->data<<" ";
-            if(currentNode->left)
+            while(!s1.isEmpty())
             {
-                s.push(currentNode->left);
-            }
-            if(currentNode->right)
-            {
-                s.push(currentNode->right);
+                BTree<int>* currentNode=s1.pop();
+                cout<<currentNode->data<<" ";
+                if(currentNode->left)
+                {
+                    s2.push(currentNode->left);
+                }
+                if(currentNode->right)
+                {
+                    s2.push(currentNode->right);
+                }
             }
         }
-        while(!s.isEmpty())
+        else
         {
-            currentNode=s.pop();
-            cout<<currentNode->data<<" ";
-            if(currentNode->left)
+            while(!s2.isEmpty())
             {
-                q.enqueue(currentNode->left);
-            }
-            if(currentNode->right)
-            {
-                q.enqueue(currentNode->right);
+                BTree<int>* currentNode=s2.pop();
+                cout<<currentNode->data<<" ";
+                if(currentNode->right)
+                {
+                    s1.push(currentNode->right);
+                }
+                if(currentNode->left)
+                {
+                    s1.push(currentNode->left);
+                }
             }
         }
+        leftToRight=!leftToRight;
     }
 }
 
